@@ -39,6 +39,21 @@ Default scale is dense on purpose (decision D-002): body 11px, labels 9px small 
 4. **Nostalgia as comfort.** Nostalgia raises positive mood, optimism and social connectedness, and buffers against threat (Sedikides & Wildschut). → Period type and ledger forms borrow that warmth. [Southampton](https://www.southampton.ac.uk/~crsi/Sedikides%20and%20Wildschut%202016.pdf)
 5. **Ornate frame, crisp figures** (our rule, to test). Lace and flourish live in the margins; every number sits in clean ink on plain paper.
 
+## Illustration library (Amanda's collection)
+
+About 100 pieces in `~/Downloads/flowers` (not in the repo). Tinted copies for the moodboard are in `~/Downloads/flowers/balancebuddy-tinted/`; the originals are untouched.
+
+| Set | Style | Fit |
+|---|---|---|
+| Sepia engravings (`1–21.png`: snowdrop, lily of the valley, pansy, primrose, daffodil, hyacinth…) | Fine 19th-century engraving | **Best fit.** True herbarium specimens. Tint to ink, cornflower or moss. One per account card? |
+| Peony line art (8) | Delicate single-weight line | Good for large, quiet moments (paid-off "bloom") |
+| Wildflower outline rows (6) | Light line, rows of stems | Borders, dividers, empty states |
+| Autumn sprays (4) | Very fine, airy | Header ornaments, seasonal variation (G5) |
+| Floral alphabet (A–Z, 0–9, &) | Serif initials wrapped in florals | Drop caps, monograms, maybe the logo "B" |
+| Flower & Leaf set (19) | Bolder, cartoonish line | Weakest fit: too heavy for the delicate direction |
+
+**Licence:** the packs are "POD License Included" (print on demand). That usually covers physical products, not use inside a web app, where SVGs can be downloaded from the page. Check each pack's licence text or ask the seller before shipping them in the app. Moodboard use is fine.
+
 ## Still to do (full research pass)
 - [ ] Colour and anxiety: what research says about warm vs. cool, saturation and calm
 - [ ] Density done well: dense ornate references (seed catalogues, banknotes, ledgers, specimen sheets) and what keeps them legible
@@ -47,4 +62,4 @@ Default scale is dense on purpose (decision D-002): body 11px, labels 9px small 
 - [ ] Illustration approach: hand-drawn SVG line work vs. commissioned art; a vocabulary of flourishes
 - [ ] Reduced-motion versions of each "small ceremony" (animations are on by default, with a setting to turn them off)
 - [ ] Dark-mode art direction ("night garden"?), built on the same tokens
-- [ ] Use Amanda's downloaded floral SVGs; check each one's license allows commercial use
+- [ ] Confirm each illustration pack's licence covers in-app/web use (they're POD licences)
