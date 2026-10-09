@@ -39,7 +39,20 @@ Default scale is dense on purpose (decision D-002): body 11px, labels 9px small 
 4. **Nostalgia as comfort.** Nostalgia raises positive mood, optimism and social connectedness, and buffers against threat (Sedikides & Wildschut). → Period type and ledger forms borrow that warmth. [Southampton](https://www.southampton.ac.uk/~crsi/Sedikides%20and%20Wildschut%202016.pdf)
 5. **Ornate frame, crisp figures** (our rule, to test). Lace and flourish live in the margins; every number sits in clean ink on plain paper.
 
-## Direction update (Oct 9): The Invitation Suite
+## Direction update (Oct 9, later): Ledger & Lace (board V)
+
+Supersedes the Invitation Suite as the lead (see D-012). The board shows:
+- **Amanda's palette** as paint chips: periwinkle is the favourite; wheat and teal are accents only.
+- **Square ledger tiles** with lace-scroll corners: fine periwinkle curls, sage leaves, blush buds and dotted tracery, inspired by the curves of embroidered lace. Each tile has a dual-colour offset shadow (mist + blush, rose or periwinkle).
+- **Multi-colour bars:** an account's balance split by rate, a paycheck split by destination, and every debt as a stacked bar.
+- **Parts-coloured bouquets:** Amanda's line-art SVGs recoloured by `tools/illustration/colorize.py`. It finds enclosed shapes and sorts them into petals, centres and leaves by shape, groups petals around flower centres, and colours each part separately (green stems and leaves, palette petals, wheat or aubergine centres), with each line in the deeper shade of the part it borders.
+
+**Known issues to fix next:**
+- The flowers are still bolder than the tiles. Thin the lines further and scale them down to match the intricacy.
+- Some blooms still mix colours across their petals (the poppy, the daisies), and some petals get read as leaves.
+- Long term, a cleaner route is per-path SVG recolouring, so the output stays vector.
+
+## Earlier: The Invitation Suite (board IV, superseded)
 
 Wedding stationery is now the lead reference (D-011). The Paper moodboard has five boards:
 - **v0 Herbarium:** the original

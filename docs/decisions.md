@@ -5,16 +5,47 @@
 
 ---
 
-### D-011 · Oct 9, 2026 · Design inspiration: wedding stationery
-**Decision:** The leading direction is wedding-invitation stationery (board IV, "The Invitation Suite"):
-- abundant hand-tinted flowers framing calm, centred text
-- lace, scallops and doilies at the edges
-- a sage silk ribbon and wax seals
-- many small details
+### D-012 · Oct 9, 2026 · Palette, likes and dislikes (supersedes D-011)
+**Correction to D-011:** BalanceBuddy is *not* a wedding-invitation site, and stationery is not a theme. Amanda likes those designs for their abundance of flowers, small details and type. The doily on board IV was too literal.
 
-**Palette:** pastel indigo, pink, butter yellow, pale salmon, faded dark green and ink, on white paper (never cream; D-010 still holds).
-**Flower mode:** flowers will be a user setting, so every layout must stand up without them. See inventory I7.
-**Why:** It's the feeling Amanda is after: celebratory, delicate, made with care. It also maps naturally onto the app: the plan is "the invitation", account cards are "RSVP cards", and the payment round is "the details card".
+**Palette (Amanda's picks, sampled from her screen):**
+
+| Role | Hex |
+|---|---|
+| **Periwinkle (favourite)** | `#8BA0D2` |
+| Blush | `#EDB6B3` |
+| Dusty rose | `#C18187` |
+| Mauve | `#A07C8F` |
+| Wheat (accent only) | `#DEC290` |
+| Sand (context only) | `#D5C7A8` |
+| Pale blue-grey | `#CDDAE0` |
+| Blue-grey | `#778B99` |
+| Olive | `#7A7860` |
+| Deep green | `#2F413C` |
+| Aubergine | `#432934` |
+| Slate ink | `#333943` |
+| **Turquoise, very sparing accents only, a shade darker** | `~#3FA7AC` |
+
+Not every colour needs to be in the theme. Grounds stay cool white (D-010).
+
+**Likes:**
+- multi-coloured bar graphs
+- the fonts
+- dual-colour offset shadows
+- the rainbow-ribbon idea (but it read as childish)
+
+**Dislikes:**
+- big soft blobs of colour (radial washes, wide organza ribbons), which don't match the intricate direction
+- a whole flower in one colour, with the next flower in another
+- Sweet-Pea Organza, the least favourite board
+
+**Flowers:** parts are coloured separately (green stems and leaves, coloured petals, contrasting centres), arranged into bouquets, in the same fine line-art style.
+
+**Lace:** borrow the *curves*, not the object. Scrolling acanthus and flourish lines around square "ledger" tiles.
+
+**Flower mode** (I7) still stands.
+
+### D-011 · Oct 9, 2026 · ~~Design inspiration: wedding stationery~~ (superseded by D-012)
 
 ### D-010 · Oct 9, 2026 · No beige grounds; animations and dark mode as user settings
 **Decision:**
