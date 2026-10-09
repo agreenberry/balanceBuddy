@@ -39,6 +39,29 @@ Default scale is dense on purpose (decision D-002): body 11px, labels 9px small 
 4. **Nostalgia as comfort.** Nostalgia raises positive mood, optimism and social connectedness, and buffers against threat (Sedikides & Wildschut). → Period type and ledger forms borrow that warmth. [Southampton](https://www.southampton.ac.uk/~crsi/Sedikides%20and%20Wildschut%202016.pdf)
 5. **Ornate frame, crisp figures** (our rule, to test). Lace and flourish live in the margins; every number sits in clean ink on plain paper.
 
+## Direction update (Oct 9): The Invitation Suite
+
+Wedding stationery is now the lead reference (D-011). The Paper moodboard has five boards:
+- **v0 Herbarium:** the original
+- **I Sweet-Pea Organza**, **II Peony Veil**, **III Meadow Ribbon:** organza explorations
+- **IV The Invitation Suite:** the current lead
+
+| Role | Hex |
+|---|---|
+| Pastel indigo / deep indigo | `#9AA3E0` / `#5560A3` |
+| Pink / rose | `#F2B6C6` / `#B5607D` |
+| Butter yellow | `#F5DC8C` |
+| Pale salmon | `#F6C2AE` |
+| Faded dark green | `#55705A` |
+| Ink | `#2B2F4A` |
+| Paper / table | `#FFFFFF` / `#F4F4F9` |
+
+**Illustration technique:** the engravings are *hand-tinted* in code. The linework is dilated and closed into a colour wash, the bloom colour fades to faded green over the stems and leaves, and the ink line sits on top. This is how 19th-century botanical prints were coloured, and it lets one licensed set of engravings carry the whole palette. Output: `~/Downloads/flowers/balancebuddy-tinted/suite/`.
+
+**Lace kit:** scalloped card edges (12px scallops), a round doily with pinhole rings, a wax-seal monogram, and a sage ribbon.
+
+**Type, invitation style:** Cormorant Garamond caps with letter-spacing of about 0.28–0.36em for names and headings, Pinyon Script for the joining words ("is to be", "for the paycheck of the fifteenth"), and Cormorant SemiBold for figures.
+
 ## Illustration library (Amanda's collection)
 
 About 100 pieces in `~/Downloads/flowers` (not in the repo). Tinted copies for the moodboard are in `~/Downloads/flowers/balancebuddy-tinted/`; the originals are untouched.

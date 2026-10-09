@@ -142,6 +142,7 @@ All rows here go through the **mirth skill** (`.claude/skills/mirth/`) before de
 | I2 | Installable PWA | Home-screen icon, offline viewing | Later |
 | I3 | Printable plan | A beautiful printed payment schedule for the fridge | Next |
 | I4 | Dark mode | Light/dark switch in settings, defaulting to the OS. Needs its own art direction. Tokens from day one keep it cheap (D-010) | Next |
+| I7 | Flower mode | A setting for full florals, light florals or none. Layouts must work in all three (D-011) | Next |
 | I6 | Settings: motion and theme | Animations on/off (default on, respects OS reduce-motion) and the light/dark switch | MVP |
 | I5 | Native mobile apps | — | Never (for now) |
 

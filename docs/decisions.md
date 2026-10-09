@@ -5,6 +5,17 @@
 
 ---
 
+### D-011 · Oct 9, 2026 · Design inspiration: wedding stationery
+**Decision:** The leading direction is wedding-invitation stationery (board IV, "The Invitation Suite"):
+- abundant hand-tinted flowers framing calm, centred text
+- lace, scallops and doilies at the edges
+- a sage silk ribbon and wax seals
+- many small details
+
+**Palette:** pastel indigo, pink, butter yellow, pale salmon, faded dark green and ink, on white paper (never cream; D-010 still holds).
+**Flower mode:** flowers will be a user setting, so every layout must stand up without them. See inventory I7.
+**Why:** It's the feeling Amanda is after: celebratory, delicate, made with care. It also maps naturally onto the app: the plan is "the invitation", account cards are "RSVP cards", and the payment round is "the details card".
+
 ### D-010 · Oct 9, 2026 · No beige grounds; animations and dark mode as user settings
 **Decision:**
 - Backgrounds are never beige or cream. Beige may appear only as a small accent. Neutrals lean cool: the working ground is a blue-tinted white (`#F6F8FC`), with pure-white cards. Pure white read as beige beside the cool inks.
