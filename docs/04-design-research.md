@@ -12,12 +12,12 @@ The direction is a 1910s pressed-flower album. Every debt is a labelled specimen
 |---|---|---|---|
 | `--color-paper` | `#FFFFFF` | archival white herbarium card | ground (**no beige grounds**, D-010) |
 | *(card tint)* | `#F4F7FB` | cool white mount | raised surfaces |
-| `--color-ink` | `#2B231D` | iron-gall ink | text, line work |
-| `--color-ink-soft` | `#5C5048` | faded ink | secondary text |
+| `--color-ink` | `#1D2233` | blue-black ink (fresh iron-gall) | text, line work |
+| `--color-ink-soft` | `#4B5368` | slate ink | secondary text |
 | `--color-cornflower` | `#4F6E9C` | pressed cornflower | the single accent: actions, key figures |
 | `--color-foxglove` | `#B4677A` | foxglove | promos, deadlines, gentle attention |
 | `--color-moss` | `#6A7A4A` | pressed moss | stems, growth, progress |
-| `--color-gilt` | `#B08D57` | gilt page edge | fine rules and frames only |
+| `--color-silver` | `#A3ACBF` | silverpoint | fine rules and frames only |
 
 ### Type
 | Role | Face | Notes |
@@ -29,7 +29,7 @@ The direction is a 1910s pressed-flower album. Every debt is a labelled specimen
 
 Default scale is dense on purpose (decision D-002): body 11px, labels 9px small caps.
 
-**Revision, Oct 9:** the rag-paper beige ground was rejected. Beige may appear as a small accent, never as a background. The ground is now archival white.
+**Revision, Oct 9:** the rag-paper beige ground was rejected. Beige may appear as a small accent, never as a background. The ground is now archival white. The warm brown ink and gold rules also read as sepia, so they moved to blue-black ink and silver rules. The palette now has no beige, tan or gold anywhere.
 
 ## Field notes (sources to expand in the full research pass)
 
