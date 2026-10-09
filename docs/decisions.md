@@ -5,6 +5,14 @@
 
 ---
 
+### D-008 · Oct 8, 2026 · Spreadsheet template is an MVP data-entry path
+**Decision:** The MVP includes a downloadable .xlsx import template (Accounts, Promo Balances, Balance Update) and a matching export. Files are parsed in the browser and previewed before saving. Full card numbers are refused. See `specs/import-template.md`.
+**Why:** Amanda has managed her money in a spreadsheet for years. Uploading a filled template is faster than form entry for 30+ accounts, and it keeps a familiar workflow.
+
+### D-007 · Oct 8, 2026 · Promo rates apply to part of a balance (segments) in the MVP
+**Decision:** A card's balance is modeled as segments: a standard-APR portion plus any number of promo portions, each with its own amount, APR, type and end date. Payment allocation follows the US rule (above-minimum payments go to the highest-APR segment first).
+**Why:** Balance transfers and partial promos are central to how Amanda manages debt. A single APR per card would produce wrong interest numbers.
+
 ### D-006 · Oct 8, 2026 · Security: structural, not scattered
 **Decision:** Security comes from a few strong structural choices: minimal data held, one data-access module, server-enforced deny-by-default rules, schema validation at boundaries, integer-cent money, emulator-only development, fail-safe calculations.
 **Why:** The app will hold other people's financial data eventually. Scattered checks clutter the code and still miss things; structure is easier to verify.

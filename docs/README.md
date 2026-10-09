@@ -13,6 +13,7 @@ Plan first, then build. These documents define what we're making before any code
 | 05 | Data model & architecture | Not started | Entities, storage, Firebase or not, security rules |
 | 06 | Security plan | Not started | Threat model, data handling, safeguards |
 | — | [Decision log](decisions.md) | Ongoing | What's been decided and why |
+| — | [Spec: import template](specs/import-template.md) | Draft 1 | Spreadsheet upload format, validation, security · [template file](templates/BalanceBuddy-Import-Template.xlsx) |
 
 Later, once 01–05 are solid:
 - `CLAUDE.md` at the repo root: rules for AI assistants working in this codebase

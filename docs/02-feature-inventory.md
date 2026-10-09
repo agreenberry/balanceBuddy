@@ -20,9 +20,9 @@
 |---|---|---|---|---|
 | A1 | Add/edit credit cards manually | Balance, APR, credit limit, statement closing day, due day | MVP | |
 | A2 | Add/edit installment loans manually | Principal, APR, term, payment, start date, origination fee | MVP | |
-| A3 | Promo APR periods | 0% or low intro APR with an end date; can stack with a regular APR on the same card | MVP | |
-| A4 | Deferred-interest promos (store cards, "no interest if paid in full") | Behaves differently from 0% intro APR: if not paid in full by the deadline, interest is charged back to the purchase date. Big trap; high value to warn about | MVP | |
-| A5 | Multiple balances on one card | Purchase vs. balance-transfer vs. promo balances, each with its own APR | Next | |
+| A3 | Promo balances on part of a card ("balance segments") | A card's balance is split into segments: the standard-APR part plus any number of promo parts (balance transfer, intro purchase APR, deferred interest), each with its own amount, APR, start/end date and fee. Interest is calculated per segment. *Promoted to MVP Oct 8: it's how Amanda actually uses cards.* | MVP | |
+| A4 | Deferred-interest promos (store cards, "no interest if paid in full") | A segment type. If not paid in full by the end date, interest is charged back to the purchase date. Big trap; high value to warn about | MVP | |
+| A5 | ~~Multiple balances on one card~~ | Merged into A3 | — | |
 | A6 | Minimum payment rules | Per-card formula (e.g. 1% + interest, or a flat $ floor); default plus custom | MVP | |
 | A7 | Balance-transfer fees | % or flat fee, applied at transfer time | Next | |
 | A8 | Loan prepayment rules | Does a prepayment shorten the term or lower the payment? Any prepayment penalty? | MVP | |
@@ -30,6 +30,8 @@
 | A10 | Mortgages | Escrow, PMI, etc. Large scope | Later | |
 | A11 | Student loans | Income-driven plans, forgiveness. Very large scope | Later | |
 | A12 | Archive paid-off debts | Kept for history and celebration | Next | |
+| A13 | Owner per account | Whose debt it is (Me, Mum…). Filter and total by owner. Amanda tracks family members' cards alongside her own | MVP | |
+| A14 | Money owed *to* you | Personal loans you made or owe to a person, with a repayment log (the "Perry" tab) | Later | |
 
 ## B. Income & cash flow
 
@@ -43,6 +45,8 @@
 | B6 | Safety buffer / emergency fund target | The plan never spends below the buffer | MVP | |
 | B7 | One-off windfalls | Tax refund, bonus: "what if I put this toward debt?" | Next | |
 | B8 | Savings goals alongside debt | Split extra money between saving and paying down | Later | |
+| B9 | Half-month planning view | Plan in "1st half / 2nd half" blocks: which bills, payments and income land in each paycheck window. This is how Amanda's sheet already works | MVP | |
+| B10 | Non-paycheck income | Rental income, side income (e.g. dog sitting) with expected vs. received | Next | |
 
 ## C. The plan (the payoff engine)
 
@@ -60,7 +64,9 @@
 | C10 | Months of calm | Payment-free months gained vs. the baseline | MVP | |
 | C11 | Re-plan when reality changes | Missed or extra payment, new balance; the plan recalculates from today | MVP | |
 | C12 | "Least total cost" optimizer | Search for the cheapest allocation across all debts and dates, beyond fixed strategies | Later | |
-| C13 | Payment-allocation realism | Card issuers apply amounts above the minimum to the highest-APR balance first (US rule). Model this for multi-balance cards | Next | |
+| C13 | Payment-allocation realism | Card issuers apply amounts above the minimum to the highest-APR segment first (US rule), so extra payments usually hit the standard-APR part, not the promo part. Required for A3 to be accurate | MVP | |
+| C14 | Promo-expiry calendar | Every promo end date on one timeline with "pay $X/paycheck to clear it in time." Replaces the "0% expires" calendar tabs in Amanda's sheet | MVP | |
+| C15 | Goal trajectory | Target total balance by date ("Goal" and "Reach goal" lines) vs. actual | Next | |
 
 ## D. Scenarios & comparisons
 
@@ -94,7 +100,11 @@
 | F2 | Progress history | Balances over time; payoff progress | Next | |
 | F3 | Bank/card syncing via an aggregator | Plaid / MX / Teller etc. Big cost, compliance and security step | Later | |
 | F4 | Transaction list | Imported or CSV upload | Later | |
-| F5 | CSV import | Statement/transactions from a bank export; safer than syncing | Next | |
+| F5 | Spreadsheet import template | Download a formatted .xlsx template (Accounts, Promo Balances, Balance Update), fill it in Excel or Google Sheets, upload to add or update everything at once. Preview and confirm before anything saves. Spec: `specs/import-template.md` | MVP | |
+| F5b | Export to the same template | Download your current data in the template format; round-trips with F5 and doubles as a backup | MVP | |
+| F5c | Bank CSV/transaction import | Transactions from a bank export; safer than syncing | Later | |
+| F10 | Utilization | Per card and overall (balance ÷ limit), shown over time | Next | |
+| F11 | New spending vs. carried debt | Separate this cycle's spending you'll pay in full from debt you're carrying (the "keep green" columns) | Next | |
 | F6 | Spending categories | Auto + manual | Later | |
 | F7 | Budgets | Per-category monthly limits | Later | |
 | F8 | Net worth | Assets − debts | Later | |
