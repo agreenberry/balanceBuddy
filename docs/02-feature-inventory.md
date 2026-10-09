@@ -66,6 +66,9 @@
 | C12 | "Least total cost" optimizer | Search for the cheapest allocation across all debts and dates, beyond fixed strategies | Later | |
 | C13 | Payment-allocation realism | Card issuers apply amounts above the minimum to the highest-APR segment first (US rule), so extra payments usually hit the standard-APR part, not the promo part. Required for A3 to be accurate | MVP | |
 | C14 | Promo-expiry calendar | Every promo end date on one timeline with "pay $X/paycheck to clear it in time." Replaces the "0% expires" calendar tabs in Amanda's sheet | MVP | |
+| C16 | Payment round | The core loop, from Amanda's sheet: (1) enter today's balances, (2) set "I have $3,000 to pay," (3) assign a payment per card while a live "left to allocate" counts down, (4) save; that creates the scheduled payments and the projected balances. The planner can suggest an allocation, but you can always override it | MVP | |
+| C17 | Notes on any balance | Attach a note to an account on a date ("payment scheduled 10/15", "promo ends Jan"). Imported from spreadsheet cell comments | MVP | |
+| C18 | Projected next balance | What each balance will be next statement, given planned payments, interest and promo expiry | Next | |
 | C15 | Goal trajectory | Target total balance by date ("Goal" and "Reach goal" lines) vs. actual | Next | |
 
 ## D. Scenarios & comparisons
@@ -100,7 +103,7 @@
 | F2 | Progress history | Balances over time; payoff progress | Next | |
 | F3 | Bank/card syncing via an aggregator | Plaid / MX / Teller etc. Big cost, compliance and security step | Later | |
 | F4 | Transaction list | Imported or CSV upload | Later | |
-| F5 | Spreadsheet import template | Download a formatted .xlsx template (Accounts, Promo Balances, Balance Update), fill it in Excel or Google Sheets, upload to add or update everything at once. Preview and confirm before anything saves. Spec: `specs/import-template.md` | MVP | |
+| F5 | Spreadsheet import template | Download a formatted .xlsx template (Accounts, Promo Balances, and Balances, a timeline with one column per date), fill it in Excel or Google Sheets, upload to add or update everything at once. Preview and confirm before anything saves. Spec: `specs/import-template.md` | MVP | |
 | F5b | Export to the same template | Download your current data in the template format; round-trips with F5 and doubles as a backup | MVP | |
 | F5c | Bank CSV/transaction import | Transactions from a bank export; safer than syncing | Later | |
 | F10 | Utilization | Per card and overall (balance ÷ limit), shown over time | Next | |

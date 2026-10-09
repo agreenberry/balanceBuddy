@@ -6,7 +6,7 @@
 ---
 
 ### D-008 · Oct 8, 2026 · Spreadsheet template is an MVP data-entry path
-**Decision:** The MVP includes a downloadable .xlsx import template (Accounts, Promo Balances, Balance Update) and a matching export. Files are parsed in the browser and previewed before saving. Full card numbers are refused. See `specs/import-template.md`.
+**Decision:** The MVP includes a downloadable .xlsx import template (Accounts, Promo Balances, and a Balances timeline with one column per date) and a matching export. Files are parsed in the browser and previewed before saving. Full card numbers are refused. See `specs/import-template.md`.
 **Why:** Amanda has managed her money in a spreadsheet for years. Uploading a filled template is faster than form entry for 30+ accounts, and it keeps a familiar workflow.
 
 ### D-007 · Oct 8, 2026 · Promo rates apply to part of a balance (segments) in the MVP

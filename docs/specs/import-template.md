@@ -2,6 +2,7 @@
 
 > Status: **Draft 1** · Oct 8, 2026 · Feature: F5 / F5b in the feature inventory
 > Template file: `docs/templates/BalanceBuddy-Import-Template.xlsx` (version 1)
+> Revised Oct 8: `Balance Update` (one row per account per date) replaced by `Balances`, a timeline with one column per date, matching how Amanda already works.
 
 ## Purpose
 
@@ -15,11 +16,30 @@ Sheet names and header text are the contract. The importer matches columns **by 
 |---|---|---|
 | `Accounts` | card or loan | Account nickname, Account type, Standard APR |
 | `Promo Balances` | promo-rate *part* of a balance | Account nickname, Promo type, Promo balance ($), Promo APR, Promo end date |
-| `Balance Update` | account per as-of date | As-of date, Account nickname, Current balance ($) |
+| `Balances` | account (rows) × date (columns) | Account nickname; for each date column: Date, Column type, balances |
 | `Start Here` | — | Instructions. Ignored by the importer |
 | `Lists` (hidden) | — | Dropdown values. Ignored by the importer |
 
-Full column lists: see the template's header rows. Columns with grey-green headers (`Check`, `Utilization`) are spreadsheet helpers, and the importer ignores them.
+Full column lists: see the template's header rows. Columns with grey-green headers (`Check`, `Owner` on Balances, the total rows) are spreadsheet helpers, and the importer ignores them.
+
+### The `Balances` timeline
+Accounts down column A, one column per date, newest on the right. Adding an update means adding a column, not filling out a form.
+
+| Row | Meaning | Imported? |
+|---|---|---|
+| 1 · Date | The as-of date for this column | Yes |
+| 2 · Column type | `Actual` (balances looked up) or `Planned` (balances after planned payments) | Yes |
+| 3 · Payment budget ($) | Money available this round (Planned columns) | Yes, stored with the plan |
+| 4 · Total owed | `SUM` of the column | No (helper) |
+| 5 · Paid down vs. previous column | Previous total − this total | No (helper) |
+| 6 · Left to allocate | Budget − paid down; green within $50 | No (helper) |
+| 7 | Headers | — |
+| 8+ | One account per row; cells are balances. A blank cell means "not recorded", not zero | Yes |
+
+- **Cell comments are imported** as notes on that balance (e.g. "payment scheduled 10/15", "promo ends Jan"). This replaces the habit of keeping reminders in comments.
+- **Planned columns** import as a payment plan: for each account, planned payment = the latest Actual balance − the Planned balance.
+- **Negative balances are allowed** (credits/overpayments).
+- Two columns may share a date (an Actual and its Planned).
 
 ### Key rules
 - **Account nickname** is the join key across sheets. It must be unique within the file. Matching is exact after trimming leading/trailing spaces. The app stores its own internal ID; the nickname is only for import matching.
@@ -38,7 +58,7 @@ Full column lists: see the template's header rows. Columns with grey-green heade
    - balance updates per account
    - errors (blocking) and warnings (non-blocking), each pointing to sheet + row
 4. **Confirm** saves everything in one transaction: all or nothing.
-5. **Idempotent:** uploading the same file twice changes nothing. A balance update is keyed by (account, as-of date); a re-upload with a different amount for the same key is shown as a change to confirm.
+5. **Idempotent:** uploading the same file twice changes nothing. A balance is keyed by (account, date, column type); a re-upload with a different amount for the same key is shown as a change to confirm.
 6. Accounts in the app but missing from the file are **left alone**, never deleted by import.
 
 ## Validation
@@ -73,6 +93,6 @@ Produces the same workbook format, filled with the user's current data, so downl
 The template carries a version on `Start Here` ("Template version 1"). Future versions may add columns. The importer accepts older versions as long as the required columns are present, and new optional columns are simply absent.
 
 ## Open questions
-- [ ] Should `Balance Update` also capture **payments made** (for history and progress), or is the balance alone enough for the MVP?
+- [ ] Should actual payments made be recorded separately, or is Actual → Planned → next Actual enough history for the MVP?
 - [ ] Accept plain CSV too (one file per sheet), or only .xlsx? Leaning .xlsx only for v1: one file, with dropdowns.
 - [ ] What did the `*` on some cards mean in the old sheet? It's preserved in the Notes column of the pre-filled file.
