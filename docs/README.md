@@ -9,7 +9,7 @@ Plan first, then build. These documents define what we're making before any code
 | 01 | [Product brief](01-product-brief.md) | Draft 1 | What is this, who's it for, how should it feel, what's in the MVP |
 | 02 | [Feature inventory](02-feature-inventory.md) | v2, tiers decided | Everything it could do, tiered MVP / Next / Later / Never |
 | 03 | Money-math spec | Not started | Exact formulas, rounding, edge cases, worked examples (these become tests) |
-| 04 | Design research & direction | Not started | What makes design comforting; moodboard and style tiles in Paper |
+| 04 | [Design research & direction](04-design-research.md) | Sneak preview (v0) | What makes design comforting; moodboard and style tiles in Paper |
 | 05 | Data model & architecture | Not started | Entities, storage, Firebase or not, security rules |
 | 06 | Security plan | Not started | Threat model, data handling, safeguards |
 | — | [Decision log](decisions.md) | Ongoing | What's been decided and why |
