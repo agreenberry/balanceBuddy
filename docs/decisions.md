@@ -5,6 +5,16 @@
 
 ---
 
+### D-009 · Oct 9, 2026 · Delight goes through the mirth skill, with hard guardrails
+**Decision:** All whimsy, celebration and gamification is designed with the `mirth` skill (`.claude/skills/mirth/`). Its guardrails are binding:
+- truth beats delight
+- no shame
+- no manipulative mechanics (no punishing streaks, fake urgency or variable rewards)
+- progress never resets
+- reduced-motion equivalents for every animation
+
+**Why:** Money is stressful. Delight should make people feel capable and at ease, and gamification patterns from other apps can easily turn anxious or manipulative (e.g. Robinhood removed its trade confetti in 2021 after criticism).
+
 ### D-008 · Oct 8, 2026 · Spreadsheet template is an MVP data-entry path
 **Decision:** The MVP includes a downloadable .xlsx import template (Accounts, Promo Balances, and a Balances timeline with one column per date) and a matching export. Files are parsed in the browser and previewed before saving. Full card numbers are refused. See `specs/import-template.md`.
 **Why:** Amanda has managed her money in a spreadsheet for years. Uploading a filled template is faster than form entry for 30+ accounts, and it keeps a familiar workflow.

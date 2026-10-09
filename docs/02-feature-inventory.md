@@ -1,156 +1,171 @@
 # BalanceBuddy — Feature Inventory
 
-> Status: **Draft 1, for you to mark up** · Oct 8, 2026
-> This is a catalogue of everything the app *could* do, so you can react instead of invent.
+> Status: **v2: tiers decided** · Oct 9, 2026
+> Amanda's marks applied; every unmarked row takes the suggested tier. Overlapping rows were merged (see *Merged rows* at the bottom; old IDs still resolve). IDs are stable, so specs and the decision log can reference them.
 >
-> **How to use it:** Each row has my *suggested* tier. Change the **Your call** column to one of:
-> - `MVP`: must exist in the first usable version
-> - `Next`: soon after the MVP
-> - `Later`: someday
-> - `Never`: cut it
-> - `?`: unsure, discuss
->
-> Add rows freely. Cross things out. Nothing here is decided until you mark it.
+> Tiers: **MVP** · **Next** (soon after MVP) · **Later** · **Never** · **?** (undecided)
+> Rule: nothing gets built without a row here at MVP or Next.
 
 ---
 
-## A. Debts & accounts (the things you owe)
+## At a glance: the MVP
 
-| ID | Feature | Notes | Suggested | Your call |
-|---|---|---|---|---|
-| A1 | Add/edit credit cards manually | Balance, APR, credit limit, statement closing day, due day | MVP | |
-| A2 | Add/edit installment loans manually | Principal, APR, term, payment, start date, origination fee | MVP | |
-| A3 | Promo balances on part of a card ("balance segments") | A card's balance is split into segments: the standard-APR part plus any number of promo parts (balance transfer, intro purchase APR, deferred interest), each with its own amount, APR, start/end date and fee. Interest is calculated per segment. *Promoted to MVP Oct 8: it's how Amanda actually uses cards.* | MVP | |
-| A4 | Deferred-interest promos (store cards, "no interest if paid in full") | A segment type. If not paid in full by the end date, interest is charged back to the purchase date. Big trap; high value to warn about | MVP | |
-| A5 | ~~Multiple balances on one card~~ | Merged into A3 | — | |
-| A6 | Minimum payment rules | Per-card formula (e.g. 1% + interest, or a flat $ floor); default plus custom | MVP | |
-| A7 | Balance-transfer fees | % or flat fee, applied at transfer time | Next | |
-| A8 | Loan prepayment rules | Does a prepayment shorten the term or lower the payment? Any prepayment penalty? | MVP | |
-| A9 | Variable-rate loans | APR changes over time (manual rate schedule) | Later | |
-| A10 | Mortgages | Escrow, PMI, etc. Large scope | Later | |
-| A11 | Student loans | Income-driven plans, forgiveness. Very large scope | Later | |
-| A12 | Archive paid-off debts | Kept for history and celebration | Next | |
-| A13 | Owner per account | Whose debt it is (Me, Mum…). Filter and total by owner. Amanda tracks family members' cards alongside her own | MVP | |
-| A14 | Money owed *to* you | Personal loans you made or owe to a person, with a repayment log (the "Perry" tab) | Later | |
+**Accounts:** cards and loans by hand, with promo parts of balances (balance transfers, intro APRs, deferred interest), transfer fees and minimum payment rules.
+**Money in and out:** paychecks plus other income (rental, side income, irregular), fixed bills, a safety buffer, and a half-month view of what each paycheck has to cover.
+**The plan:** payoff order (avalanche, snowball or custom), promo deadlines, dated payment schedule, debt-free date, total interest, months of calm, re-planning.
+**The payment round:** balances in → budget → allocate → scheduled payments, with notes on any balance.
+**Scenarios:** side-by-side comparisons at a fair monthly payment, trade-off notes, what-if sliders, and the commitment strategies (borrow-and-prepay, shorter term, bad-month check).
+**Getting data in and out:** the spreadsheet template (import and export).
+**Reminders:** bill due dates.
+**Feeling:** gentle language throughout.
+**Platform:** responsive, zoom-safe web app.
+
+---
+
+## A. Debts & accounts
+
+| ID | Feature | Notes | Tier |
+|---|---|---|---|
+| A1 | Add/edit credit cards manually | Balance, APR, credit limit, statement closing day, due day | MVP |
+| A2 | Add/edit installment loans manually | Principal, APR, term, payment, start date, origination fee | MVP |
+| A3 | Promo balances on part of a card ("balance segments") | Standard-APR part plus any number of promo parts, each with amount, APR, start/end date and fee. Segment types: balance transfer · intro purchase APR · **deferred interest** (if not paid in full by the end date, interest is charged back to the purchase date; warn loudly) · other. *Includes former A4, A5, A7.* | MVP |
+| A6 | Minimum payment rules | Per-card formula (e.g. 1% + interest, or a flat $ floor); default plus custom | MVP |
+| A8 | Loan prepayment rules | Does a prepayment shorten the term or lower the payment? Any prepayment penalty? | Next |
+| A9 | Variable-rate loans | APR changes over time (manual rate schedule) | Later |
+| A10 | Mortgages | Escrow, PMI, etc. Large scope | Later |
+| A11 | Student loans | Income-driven plans, forgiveness. Very large scope | Later |
+| A12 | Archive paid-off debts | Kept for history and celebration | Next |
+| A13 | Owner per account | Whose debt it is (Me, Mum…); filter and total by owner | Next |
+| A14 | Money owed *to* you | Personal loans you made or owe to a person, with a repayment log | Later |
 
 ## B. Income & cash flow
 
-| ID | Feature | Notes | Suggested | Your call |
-|---|---|---|---|---|
-| B1 | Paycheck schedule | Weekly, biweekly, semi-monthly, monthly; amount; next date | MVP | |
-| B2 | Multiple income sources | Two jobs, side income | Next | |
-| B3 | Irregular/variable income | Ranges or a conservative estimate | Later | |
-| B4 | Fixed bills | Rent, utilities, subscriptions, with due dates | MVP | |
-| B5 | "Available for debt" per paycheck | Income − bills − buffer = what the plan can use | MVP | |
-| B6 | Safety buffer / emergency fund target | The plan never spends below the buffer | MVP | |
-| B7 | One-off windfalls | Tax refund, bonus: "what if I put this toward debt?" | Next | |
-| B8 | Savings goals alongside debt | Split extra money between saving and paying down | Later | |
-| B9 | Half-month planning view | Plan in "1st half / 2nd half" blocks: which bills, payments and income land in each paycheck window. This is how Amanda's sheet already works | MVP | |
-| B10 | Non-paycheck income | Rental income, side income (e.g. dog sitting) with expected vs. received | Next | |
+| ID | Feature | Notes | Tier |
+|---|---|---|---|
+| B1 | Paycheck schedule | Weekly, biweekly, semi-monthly, monthly; amount; next date | MVP |
+| B2 | Multiple income sources | Two jobs, side income | MVP |
+| B4 | Fixed bills | Rent, utilities, subscriptions, with due dates | MVP |
+| B6 | Safety buffer / emergency fund target | The plan never spends below the buffer | MVP |
+| B7 | One-off windfalls | Tax refund, bonus: "what if I put this toward debt?" | Next |
+| B8 | Savings goals alongside debt | Split extra money between saving and paying down | Later |
+| B9 | Half-month planning view | "1st half / 2nd half" blocks: income − bills − buffer = what's available for debt in each paycheck window. *Includes former B5.* | MVP |
+| B10 | Other and irregular income | Rental and side income (e.g. dog sitting) with expected vs. received; irregular amounts as a range or conservative estimate. *Includes former B3.* | MVP |
 
-## C. The plan (the payoff engine)
+## C. The plan (payoff engine)
 
-| ID | Feature | Notes | Suggested | Your call |
-|---|---|---|---|---|
-| C1 | Avalanche strategy | Highest APR first; minimizes interest | MVP | |
-| C2 | Snowball strategy | Smallest balance first; motivational wins | MVP | |
-| C3 | Custom order | Drag debts into your own order | Next | |
-| C4 | Promo-deadline awareness | Plan pays off promo/deferred balances before they expire when that's cheaper | MVP | |
-| C5 | Dated payment schedule | "On Oct 24 (payday), pay $X to Card A, minimums on the rest" | MVP | |
-| C6 | Paycheck-aligned timing | Payments scheduled from the paycheck that lands before each due date | MVP | |
-| C7 | Statement-closing optimization | Paying before the statement closes lowers the reported balance and utilization. Show the timing; credit-score impact is informational only | Next | |
-| C8 | Debt-free date | Overall and per debt | MVP | |
-| C9 | Total interest paid | Under the plan vs. minimums only | MVP | |
-| C10 | Months of calm | Payment-free months gained vs. the baseline | MVP | |
-| C11 | Re-plan when reality changes | Missed or extra payment, new balance; the plan recalculates from today | MVP | |
-| C12 | "Least total cost" optimizer | Search for the cheapest allocation across all debts and dates, beyond fixed strategies | Later | |
-| C13 | Payment-allocation realism | Card issuers apply amounts above the minimum to the highest-APR segment first (US rule), so extra payments usually hit the standard-APR part, not the promo part. Required for A3 to be accurate | MVP | |
-| C14 | Promo-expiry calendar | Every promo end date on one timeline with "pay $X/paycheck to clear it in time." Replaces the "0% expires" calendar tabs in Amanda's sheet | MVP | |
-| C16 | Payment round | The core loop, from Amanda's sheet: (1) enter today's balances, (2) set "I have $3,000 to pay," (3) assign a payment per card while a live "left to allocate" counts down, (4) save; that creates the scheduled payments and the projected balances. The planner can suggest an allocation, but you can always override it | MVP | |
-| C17 | Notes on any balance | Attach a note to an account on a date ("payment scheduled 10/15", "promo ends Jan"). Imported from spreadsheet cell comments | MVP | |
-| C18 | Projected next balance | What each balance will be next statement, given planned payments, interest and promo expiry | Next | |
-| C15 | Goal trajectory | Target total balance by date ("Goal" and "Reach goal" lines) vs. actual | Next | |
+| ID | Feature | Notes | Tier |
+|---|---|---|---|
+| C1 | Payoff order | Avalanche (highest APR first), snowball (smallest balance first), or custom (drag your own order). *Includes former C2, C3.* | MVP |
+| C4 | Promo deadlines | The plan clears promo and deferred-interest balances before they expire when that's cheaper, and shows every end date on one calendar with "pay $X per paycheck to clear it in time." *Includes former C14.* | MVP |
+| C5 | Dated payment schedule | "On Oct 24 (payday), pay $X to Card A, minimums on the rest," drawn from the paycheck that lands before each due date. *Includes former C6.* | MVP |
+| C7 | Statement-closing optimization | Paying before the statement closes lowers the reported balance and utilization; credit-score impact is informational only | Next |
+| C8 | Debt-free date | Overall and per debt | MVP |
+| C9 | Total interest paid | Under the plan vs. minimums only | MVP |
+| C10 | Months of calm | Payment-free months gained vs. the baseline | MVP |
+| C11 | Re-plan when reality changes | Missed or extra payment, new balance; recalculates from today | MVP |
+| C12 | "Least total cost" optimizer | Search for the cheapest allocation across all debts and dates | Later |
+| C13 | Payment-allocation realism | Issuers apply above-minimum payments to the highest-APR segment first (US rule). Required for A3 to be accurate | MVP |
+| C15 | Goal trajectory | Target total balance by date ("Goal" and "Reach goal" lines) vs. actual | Next |
+| C16 | Payment round | The core loop: (1) enter today's balances, (2) "I have $3,000 to pay," (3) assign payments per card while "left to allocate" counts down, (4) save → scheduled payments and projected balances. The planner can suggest; you can always override. *Includes former F1.* | MVP |
+| C17 | Notes on any balance | Attach a note to an account on a date; imported from spreadsheet cell comments | MVP |
+| C18 | Projected next balance | Next statement's balance given planned payments, interest and promo expiry | Next |
 
 ## D. Scenarios & comparisons
 
-| ID | Feature | Notes | Suggested | Your call |
-|---|---|---|---|---|
-| D1 | Side-by-side scenario comparison | 2–4 scenarios; columns for monthly payment, payoff date, interest, fees, months of calm | MVP | |
-| D2 | Fair-comparison mode | Option to line scenarios up at the same monthly payment, so the true driver of savings is visible | MVP | |
-| D3 | "Break-even" answers | E.g. "the 10-year loan wins if its rate is below ~11.5%" | Next | |
-| D4 | Trade-off notes | Plain-language callouts: forced vs. flexible, fees, risk in a bad month | MVP | |
-| D5 | What-if sliders | Extra $/month, lump sum, rate change | Next | |
-| D6 | Refinance / consolidation calculator | New loan pays off old debts: fees, new rate, new term | Next | |
-| D7 | Balance-transfer calculator | Transfer fee vs. interest saved during the promo; can you pay it off in time? | Next | |
-| D8 | Save and name scenarios | Come back to them later | Next | |
+| ID | Feature | Notes | Tier |
+|---|---|---|---|
+| D1 | Side-by-side scenarios | 2–4 scenarios: monthly payment, payoff date, interest, fees, months of calm. Always comparable at the **same monthly payment** (fair-comparison rule), with plain-language trade-off notes (forced vs. flexible, fees, bad-month risk). *Includes former D2, D4.* | MVP |
+| D3 | "Break-even" answers | E.g. "the 10-year loan wins if its rate is below ~11.5%" | Next |
+| D5 | What-if sliders | Extra $/month, lump sum, rate change | MVP |
+| D6 | Refinance / consolidation calculator | New loan pays off old debts: fees, new rate, new term | Next |
+| D7 | Balance-transfer calculator | Transfer fee vs. interest saved during the promo; can you clear it in time? | Next |
+| D8 | Save and name scenarios | Come back to them later | Next |
 
 ## E. Commitment strategies (make the good choice automatic)
 
-| ID | Feature | Notes | Suggested | Your call |
-|---|---|---|---|---|
-| E1 | Borrow-larger-and-prepay | Your $80k − $20k move: shows the forced payment, interest, extra origination fee, and rigidity | MVP | |
-| E2 | Shorter-term loan comparison | Forced payment via term; shows the rate needed to beat E1 | MVP | |
-| E3 | Autopay-above-minimum plan | Recommended autopay amount per debt | Next | |
-| E4 | Payday auto-transfer plan | "Move $X to savings/debt the day you're paid" | Next | |
-| E5 | Rigidity score / bad-month check | What's the *required* outflow if things go wrong? Can your buffer cover it? | MVP | |
-| E6 | Commitment reminders | Gentle nudges tied to paydays (needs notifications) | Later | |
+| ID | Feature | Notes | Tier |
+|---|---|---|---|
+| E1 | Borrow-larger-and-prepay | Forced payment, interest, extra origination fee, and rigidity | MVP |
+| E2 | Shorter-term loan comparison | Forced payment via term; shows the rate needed to beat E1 | MVP |
+| E3 | Autopay-above-minimum plan | Recommended autopay amount per debt | Next |
+| E4 | Payday auto-transfer plan | "Move $X to savings/debt the day you're paid" | Next |
+| E5 | Bad-month check | The *required* outflow if things go wrong, and whether your buffer covers it | MVP |
+| E6 | Commitment reminders | Gentle nudges tied to paydays (builds on F9's notifications) | Later |
 
-## F. Tracking (the "Mint half")
+## F. Tracking & data
 
-| ID | Feature | Notes | Suggested | Your call |
-|---|---|---|---|---|
-| F1 | Manual balance updates | Update balances monthly; history builds over time | MVP | |
-| F2 | Progress history | Balances over time; payoff progress | Next | |
-| F3 | Bank/card syncing via an aggregator | Plaid / MX / Teller etc. Big cost, compliance and security step | Later | |
-| F4 | Transaction list | Imported or CSV upload | Later | |
-| F5 | Spreadsheet import template | Download a formatted .xlsx template (Accounts, Promo Balances, and Balances, a timeline with one column per date), fill it in Excel or Google Sheets, upload to add or update everything at once. Preview and confirm before anything saves. Spec: `specs/import-template.md` | MVP | |
-| F5b | Export to the same template | Download your current data in the template format; round-trips with F5 and doubles as a backup | MVP | |
-| F5c | Bank CSV/transaction import | Transactions from a bank export; safer than syncing | Later | |
-| F10 | Utilization | Per card and overall (balance ÷ limit), shown over time | Next | |
-| F11 | New spending vs. carried debt | Separate this cycle's spending you'll pay in full from debt you're carrying (the "keep green" columns) | Next | |
-| F6 | Spending categories | Auto + manual | Later | |
-| F7 | Budgets | Per-category monthly limits | Later | |
-| F8 | Net worth | Assets − debts | Later | |
-| F9 | Bill reminders | Due-date notifications | Later | |
+| ID | Feature | Notes | Tier |
+|---|---|---|---|
+| F2 | Progress history | Balances over time; payoff progress | Next |
+| F3 | Bank/card syncing via an aggregator | Plaid / MX / Teller etc. Big cost, compliance and security step | Later |
+| F4 | Transaction list | Imported or CSV upload | Later |
+| F5 | Spreadsheet import template | .xlsx template (Accounts, Promo Balances, and a dated Balances timeline); upload, preview, confirm. Spec: `specs/import-template.md` | MVP |
+| F5b | Export to the same template | Round-trips with F5; doubles as a plain backup | MVP |
+| F5c | Bank CSV/transaction import | Transactions from a bank export | Later |
+| F6 | Spending categories | Auto + manual | Later |
+| F7 | Budgets | Per-category monthly limits | Later |
+| F8 | Net worth | Assets − debts | Later |
+| F9 | Bill reminders | Due-date reminders. ⚠ Reminders that arrive *outside* the app (email/push) need a server and an account, which affects H1/H2 | MVP |
+| F10 | Utilization | Per card and overall (balance ÷ limit), over time | Next |
+| F11 | New spending vs. carried debt | This cycle's spending you'll pay in full vs. debt you're carrying | Next |
 
 ## G. Feeling & delight
 
-| ID | Feature | Notes | Suggested | Your call |
-|---|---|---|---|---|
-| G1 | Hand-drawn milestone moments | A debt paid off "blooms"; new flourishes as progress grows | Next | |
-| G2 | Gentle language system | Copy guidelines: no red-alert shaming; truthful but kind | MVP | |
-| G3 | Progress garden / visual metaphor | Overall progress as an illustration that fills in | Later | |
-| G4 | Quiet mode | Hide totals and show only "this paycheck, do this," for overwhelming days | Next | |
-| G5 | Seasonal/flourish variations | Illustration sets that change with seasons | Later | |
+All rows here go through the **mirth skill** (`.claude/skills/mirth/`) before design or build.
+
+| ID | Feature | Notes | Tier |
+|---|---|---|---|
+| G1 | Hand-drawn milestone moments | A debt paid off "blooms"; new flourishes as progress grows | Next |
+| G2 | Gentle language system | Copy guidelines: no red-alert shaming; truthful but kind | MVP |
+| G3 | Progress garden / visual metaphor | Overall progress as an illustration that fills in | Later |
+| G4 | Quiet mode | Hide totals; show only "this paycheck, do this," for overwhelming days | Next |
+| G5 | Seasonal flourish variations | Illustration sets that change with seasons | Later |
 
 ## H. Accounts, data & security
 
-| ID | Feature | Notes | Suggested | Your call |
-|---|---|---|---|---|
-| H1 | Local-only mode (no account) | Data stays in the browser; simplest and safest v0 | ? | |
-| H2 | Sign-in (Firebase Auth) | Email link / passkey / Google | ? | |
-| H3 | Cloud sync of plan data | Firestore with deny-by-default, tested rules | Next | |
-| H4 | Encrypted export/import | Back up your data to a file; restore it | MVP | |
-| H5 | Delete my data, fully | One action, actually deletes everything | MVP (once there's cloud data) | |
-| H6 | Session timeout / lock | Auto-lock after inactivity | Next | |
-| H7 | Audit trail of changes | What changed and when, per debt | Later | |
-| H8 | Multi-user / household sharing | Shared plans with permissions | Later | |
+| ID | Feature | Notes | Tier |
+|---|---|---|---|
+| H1 | Local-only mode (no account) | Data stays in the browser; simplest and safest | **?** decide in architecture doc |
+| H2 | Sign-in (Firebase Auth) | Email link / passkey / Google | **?** decide in architecture doc |
+| H3 | Cloud sync of plan data | Firestore with deny-by-default, tested rules | Next |
+| H4 | Encrypted full backup | Everything, including scenarios and notes, in one password-protected file. Complements F5b's plain spreadsheet export | MVP |
+| H5 | Delete my data, fully | One action, actually deletes everything | MVP once there's cloud data |
+| H6 | Session timeout / lock | Auto-lock after inactivity | Next |
+| H7 | Audit trail of changes | What changed and when, per debt | Later |
+| H8 | Multi-user / household sharing | Shared plans with permissions | Later |
 
 ## I. Platform
 
-| ID | Feature | Notes | Suggested | Your call |
-|---|---|---|---|---|
-| I1 | Responsive web app | Desktop first; zoom-safe; reflows down to phone width | MVP | |
-| I2 | Installable PWA | Home-screen icon, offline viewing | Later | |
-| I3 | Printable plan | A beautiful printed payment schedule for the fridge | Next | |
-| I4 | Dark mode | Ornate in candlelight? Needs its own art direction | Later | |
-| I5 | Native mobile apps | — | Never (for now) | |
+| ID | Feature | Notes | Tier |
+|---|---|---|---|
+| I1 | Responsive web app | Desktop first; zoom-safe; reflows down to phone width | MVP |
+| I2 | Installable PWA | Home-screen icon, offline viewing | Later |
+| I3 | Printable plan | A beautiful printed payment schedule for the fridge | Next |
+| I4 | Dark mode | Ornate in candlelight? Needs its own art direction | Later |
+| I5 | Native mobile apps | — | Never (for now) |
 
 ---
 
-## Parking lot
+## Merged rows
 
-Ideas that came up and don't fit a row yet:
+| Old ID | Now part of | Note |
+|---|---|---|
+| A4 Deferred-interest promos | A3 | A segment type |
+| A5 Multiple balances on one card | A3 | Same concept |
+| A7 Balance-transfer fees | A3 | Fee is a segment field; marked MVP |
+| B3 Irregular income | B10 | Marked "MVP (with B3)" |
+| B5 Available for debt per paycheck | B9 | B9 is how it's shown |
+| C2 Snowball, C3 Custom order | C1 | C3 marked MVP |
+| C6 Paycheck-aligned timing | C5 | Same schedule |
+| C14 Promo-expiry calendar | C4 | Engine + calendar in one |
+| D2 Fair-comparison mode, D4 Trade-off notes | D1 | Rules of every comparison |
+| F1 Manual balance updates | C16 | Step 1 of the payment round |
+
+## Open questions raised by the tiers
+
+- **F9 reminders vs. H1/H2.** In-app reminders work in local-only mode. Email or push reminders need a server that knows your due dates and how to reach you. Decide in the architecture doc: in-app only for MVP, or accounts from day one?
+
+## Parking lot
 
 - Credit-score impact estimates. Risky to state as fact; informational only, if ever.
 - Tax implications (e.g. student-loan interest deduction). Probably never; not tax advice.
