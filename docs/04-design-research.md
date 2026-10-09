@@ -10,7 +10,8 @@ The direction is a 1910s pressed-flower album. Every debt is a labelled specimen
 ### Palette (each colour comes from the scene)
 | Token | Hex | Source | Role |
 |---|---|---|---|
-| `--color-paper` | `#F5EFE2` | rag paper | ground |
+| `--color-paper` | `#FFFFFF` | archival white herbarium card | ground (**no beige grounds**, D-010) |
+| *(card tint)* | `#F4F7FB` | cool white mount | raised surfaces |
 | `--color-ink` | `#2B231D` | iron-gall ink | text, line work |
 | `--color-ink-soft` | `#5C5048` | faded ink | secondary text |
 | `--color-cornflower` | `#4F6E9C` | pressed cornflower | the single accent: actions, key figures |
@@ -28,6 +29,8 @@ The direction is a 1910s pressed-flower album. Every debt is a labelled specimen
 
 Default scale is dense on purpose (decision D-002): body 11px, labels 9px small caps.
 
+**Revision, Oct 9:** the rag-paper beige ground was rejected. Beige may appear as a small accent, never as a background. The ground is now archival white.
+
 ## Field notes (sources to expand in the full research pass)
 
 1. **Curves over corners.** People prefer curved objects to sharp-angled ones, and sharp contours are linked to heightened amygdala activity (Bar & Neta, 2006/2007). → Scallops, tendrils, rounded frames. [MGH](https://www.nmr.mgh.harvard.edu/publications/journal_articles/882) · [PDF](https://canlab.unl.edu/sites/unl.edu.cas.psychology.cognitive-and-affective-neuroscience/files/media/file/BarNetaNeuropsych2007.pdf)
@@ -42,4 +45,6 @@ Default scale is dense on purpose (decision D-002): body 11px, labels 9px small 
 - [ ] Contrast check: every text/background pair against WCAG AA at the dense default sizes
 - [ ] Two contrasting alternative directions to compare against Herbarium
 - [ ] Illustration approach: hand-drawn SVG line work vs. commissioned art; a vocabulary of flourishes
-- [ ] Reduced-motion versions of each "small ceremony"
+- [ ] Reduced-motion versions of each "small ceremony" (animations are on by default, with a setting to turn them off)
+- [ ] Dark-mode art direction ("night garden"?), built on the same tokens
+- [ ] Use Amanda's downloaded floral SVGs; check each one's license allows commercial use

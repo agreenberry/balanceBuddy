@@ -38,7 +38,8 @@ If it only makes them feel *busy*, *watched*, *rushed* or *guilty*, it fails, ho
 4. **Rest is not failure.** Skipping a week, a bad month, or re-planning is normal and must never break a "chain" or reset visible progress. Progress only ever accumulates.
 5. **Respect the aesthetic** (see `docs/decisions.md`, D-002). Ornate, delicate, hand-drawn, 1900s–1920s; dense and intricate at 100%. Delight is *fine detail you discover*, not big bouncy UI. No emoji-heavy copy, no generic confetti, no cartoon mascots unless they're drawn in the house style.
 6. **Accessible always.**
-   - Honor `prefers-reduced-motion`: every animation has a still equivalent that carries the same meaning.
+   - Animations are welcome and on by default, but there's a user setting to turn them off (D-010), and the default respects the OS `prefers-reduced-motion`. Every animation has a still equivalent that carries the same meaning.
+   - Every moment must work in both light and dark mode.
    - Never put information *only* in an animation, color or sound.
    - Sound is off by default.
    - Nothing flashes more than 3 times a second.

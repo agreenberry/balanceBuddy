@@ -5,6 +5,15 @@
 
 ---
 
+### D-010 · Oct 9, 2026 · No beige grounds; animations and dark mode as user settings
+**Decision:**
+- Backgrounds are never beige or cream. Beige may appear only as a small accent. The working ground is white (`#FFFFFF`) with cool-tinted raised surfaces.
+- The app **has animations**, on by default. A setting turns them off; the default also respects the OS "reduce motion" preference. Every animation has a still equivalent.
+- The app has **light and dark mode**, switchable in settings (defaulting to the OS preference).
+- Every colour is a design token from day one, so dark mode is a second token set, not a rewrite.
+
+**Why:** Amanda's direction. Building on tokens early keeps dark mode cheap.
+
 ### D-009 · Oct 9, 2026 · Delight goes through the mirth skill, with hard guardrails
 **Decision:** All whimsy, celebration and gamification is designed with the `mirth` skill (`.claude/skills/mirth/`). Its guardrails are binding:
 - truth beats delight
