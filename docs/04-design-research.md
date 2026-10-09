@@ -10,8 +10,8 @@ The direction is a 1910s pressed-flower album. Every debt is a labelled specimen
 ### Palette (each colour comes from the scene)
 | Token | Hex | Source | Role |
 |---|---|---|---|
-| `--color-paper` | `#FFFFFF` | archival white herbarium card | ground (**no beige grounds**, D-010) |
-| *(card tint)* | `#F4F7FB` | cool white mount | raised surfaces |
+| `--color-paper` | `#F6F8FC` | mist | ground: cool-tinted white (**no beige grounds**, D-010) |
+| *(card)* | `#FFFFFF` | archival white card | raised surfaces |
 | `--color-ink` | `#1D2233` | blue-black ink (fresh iron-gall) | text, line work |
 | `--color-ink-soft` | `#4B5368` | slate ink | secondary text |
 | `--color-cornflower` | `#4F6E9C` | pressed cornflower | the single accent: actions, key figures |
@@ -29,7 +29,7 @@ The direction is a 1910s pressed-flower album. Every debt is a labelled specimen
 
 Default scale is dense on purpose (decision D-002): body 11px, labels 9px small caps.
 
-**Revision, Oct 9:** the rag-paper beige ground was rejected. Beige may appear as a small accent, never as a background. The ground is now archival white. The warm brown ink and gold rules also read as sepia, so they moved to blue-black ink and silver rules. The palette now has no beige, tan or gold anywhere.
+**Revision, Oct 9:** the rag-paper beige ground was rejected. Beige may appear as a small accent, never as a background. The ground is now archival white. The warm brown ink and gold rules also read as sepia, so they moved to blue-black ink and silver rules. The palette now has no beige, tan or gold anywhere. Pure white still *read* beige next to the cool inks, a simultaneous-contrast effect, so the ground is tinted slightly blue (`#F6F8FC`) and cards are pure white. **Rule: neutral grounds lean cool, never warm.**
 
 ## Field notes (sources to expand in the full research pass)
 

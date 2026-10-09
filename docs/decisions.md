@@ -7,7 +7,7 @@
 
 ### D-010 · Oct 9, 2026 · No beige grounds; animations and dark mode as user settings
 **Decision:**
-- Backgrounds are never beige or cream. Beige may appear only as a small accent. The working ground is white (`#FFFFFF`) with cool-tinted raised surfaces.
+- Backgrounds are never beige or cream. Beige may appear only as a small accent. Neutrals lean cool: the working ground is a blue-tinted white (`#F6F8FC`), with pure-white cards. Pure white read as beige beside the cool inks.
 - The app **has animations**, on by default. A setting turns them off; the default also respects the OS "reduce motion" preference. Every animation has a still equivalent.
 - The app has **light and dark mode**, switchable in settings (defaulting to the OS preference).
 - Every colour is a design token from day one, so dark mode is a second token set, not a rewrite.
